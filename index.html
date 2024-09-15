@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger UI with Random Tech Posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Tech Blogger</h1>
+    </header>
+
+    <div class="post-container" id="postContainer">
+        <!-- JavaScript will inject random posts here -->
+    </div>
+
+    <footer class="footer">
+        <p>Powered by <span>Blogger</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Fonts */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+}
+
+/* Posts Container */
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Post Card */
+.post-card {
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    border-radius: 8px;
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-card .post-content {
+    padding: 15px;
+}
+
+.post-card h3 {
+    font-size: 1.5rem;
+    color: #0000FF;
+}
+
+.post-card p {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.post-card .post-date {
+    font-size: 0.9rem;
+    color: #008000;
+}
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer span {
+    color: #008000;
+}
+// Array of random technology post data
+const posts = [
+    {
+        title: 'The Future of AI Technology',
+        content: 'Explore how AI is shaping the future of industries worldwide.',
+        image: 'https://via.placeholder.com/300x200.png?text=AI+Future',
+        date: 'September 15, 2024'
+    },
+    {
+        title: 'Quantum Computing Breakthroughs',
+        content: 'Discover the latest in quantum computing and its potential to revolutionize computing power.',
+        image: 'https://via.placeholder.com/300x200.png?text=Quantum+Computing',
+        date: 'September 14, 2024'
+    },
+    {
+        title: '5G Networks: What You Need to Know',
+        content: 'A closer look at the roll-out of 5G networks and its impact on connectivity.',
+        image: 'https://via.placeholder.com/300x200.png?text=5G+Networks',
+        date: 'September 13, 2024'
+    },
+    {
+        title: 'Blockchain Beyond Cryptocurrency',
+        content: 'Blockchain technology is transforming industries beyond cryptocurrency.',
+        image: 'https://via.placeholder.com/300x200.png?text=Blockchain',
+        date: 'September 12, 2024'
+    }
+];
+
+// Function to create random posts
+function createPosts() {
+    const postContainer = document.getElementById('postContainer');
+    posts.forEach(post => {
+        const postCard = document.createElement('div');
+        postCard.classList.add('post-card');
+
+        postCard.innerHTML = `
+            <img src="${post.image}" alt="${post.title}">
+            <div class="post-content">
+                <h3>${post.title}</h3>
+                <p>${post.content}</p>
+                <span class="post-date">${post.date}</span>
+            </div>
+        `;
+
+        postContainer.appendChild(postCard);
+    });
+}
+
+// Call the function to create posts when the page loads
+window.onload = createPosts;
