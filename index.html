@@ -4,7 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogger UI with Random Tech Posts</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and Fonts */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+        }
+
+        /* Posts Container */
+        .post-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        /* Post Card */
+        .post-card {
+            background-color: #f0f0f0;
+            border: 1px solid #000;
+            border-radius: 8px;
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-card .post-content {
+            padding: 15px;
+        }
+
+        .post-card h3 {
+            font-size: 1.5rem;
+            color: #0000FF;
+        }
+
+        .post-card p {
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .post-card .post-date {
+            font-size: 0.9rem;
+            color: #008000;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer span {
+            color: #008000;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -12,13 +102,4 @@
     </header>
 
     <div class="post-container" id="postContainer">
-        <!-- JavaScript will inject random posts here -->
-    </div>
-
-    <footer class="footer">
-        <p>Powered by <span>Blogger</span></p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- JavaScript will inject⬤
