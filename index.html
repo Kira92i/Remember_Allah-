@@ -1,45 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Technology Blog</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to the Custom Technology Blog</h1>
-        <nav>
-            <ul>
-                <li><a href="#latest-posts">Latest Posts</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="latest-posts">
-            <h2>Latest Posts</h2>
-            <article>
-                <h3>Understanding AI in 2023</h3>
-                <p>Explore the advancements in artificial intelligence and its impact on various industries.</p>
-                <a href="#">Read more</a>
-            </article>
-            <article>
-                <h3>The Future of Quantum Computing</h3>
-                <p>Dive into the world of quantum computing and its potential to revolutionize technology.</p>
-                <a href="#">Read more</a>
-            </article>
-        </section>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are passionate about technology and aim to provide insightful articles and resources.</p>
-        </section>
-    </main>
-    <footer>
-        <h2>Contact Us</h2>
-        <p>Email: info@customtechblog.com</p>
-        <p>Follow us on social media!</p>
-    </footer>
-</body>
-</html>
+// Create the document structure
+document.addEventListener("DOMContentLoaded", function() {
+    // Create header
+    const header = document.createElement('header');
+    const h1 = document.createElement('h1');
+    h1.textContent = "Welcome to the Custom Technology Blog";
+    header.appendChild(h1);
+
+    // Create navigation
+    const nav = document.createElement('nav');
+    const ul = document.createElement('ul');
+    const links = [
+        { href: "#latest-posts", text: "Latest Posts" },
+        { href: "#about", text: "About Us" },
+        { href: "#contact", text: "Contact" }
+    ];
+    links.forEach(link => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = link.text;
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+    nav.appendChild(ul);
+    header.appendChild(nav);
+    document.body.appendChild(header);
+
+    // Create main content
+    const main = document.createElement('main');
+    
+    // Latest Posts section
+    const latestPostsSection = document.createElement('section');
+    latestPostsSection.id = "latest-posts";
+    const h2Latest = document.createElement('h2');
+    h2Latest.textContent = "Latest Posts";
+    latestPostsSection.appendChild(h2Latest);
+
+    const articles = [
+        {
+            title: "Understanding AI in 2023",
+            content: "Explore the advancements in artificial intelligence and its impact on various industries."
+        },
+        {
+            title: "The Future of Quantum Computing",
+            content: "Dive into the world of quantum computing and its potential to revolutionize technology."
+        }
+    ];
+
+    articles.forEach(articleData => {
+        const article = document.createElement('article');
+        const h3 = document.createElement('h3');
+        h3.textContent = articleData.title;
+        const p = document.createElement('p');
+        p.textContent = articleData.content;
+        const a = document.createElement('a');
+        a.href = "#";
+        a.textContent = "Read more";
+        article.appendChild(h3);
+        article.appendChild(p);
+        article.appendChild(a);
+        latestPostsSection.appendChild(article);
+    });
+
+    main.appendChild(latestPostsSection);
+
+    // About section
+    const aboutSection = document.createElement('section');
+    aboutSection.id = "about";
+    const h2About = document.createElement('h2');
+    h2About.textContent = "About Us";
+    const pAbout = document.createElement('p');
+    pAbout.textContent = "We are passionate about technology and aim to provide insightful articles and resources.";
+    aboutSection.appendChild(h2About);
+    aboutSection.appendChild(pAbout);
+    main.appendChild(aboutSection);
+    
+    document.body.appendChild(main);
+
+    // Create footer
+    const footer = document.createElement('footer');
+    const h2Footer = document.createElement('h2');
+    h2Footer.textContent = "Contact Us";
+    const pEmail = document.createElement('p');
+    pEmail.textContent = "Email: info@customtechblog.com";
+    const pSocial = document.createElement('p');
+    pSocial.textContent = "Follow us on social media!";
+    footer.appendChild(h2Footer);
+    footer.appendChild(pEmail);
+    footer.appendChild(pSocial);
+    document.body.appendChild(footer);
+});
