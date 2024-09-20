@@ -1,92 +1,75 @@
-// Create the document structure
-document.addEventListener("DOMContentLoaded", function() {
-    // Create header
-    const header = document.createElement('header');
-    const h1 = document.createElement('h1');
-    h1.textContent = "Welcome to the Custom Technology Blog";
-    header.appendChild(h1);
-
-    // Create navigation
-    const nav = document.createElement('nav');
-    const ul = document.createElement('ul');
-    const links = [
-        { href: "#latest-posts", text: "Latest Posts" },
-        { href: "#about", text: "About Us" },
-        { href: "#contact", text: "Contact" }
-    ];
-    links.forEach(link => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = link.href;
-        a.textContent = link.text;
-        li.appendChild(a);
-        ul.appendChild(li);
-    });
-    nav.appendChild(ul);
-    header.appendChild(nav);
-    document.body.appendChild(header);
-
-    // Create main content
-    const main = document.createElement('main');
-    
-    // Latest Posts section
-    const latestPostsSection = document.createElement('section');
-    latestPostsSection.id = "latest-posts";
-    const h2Latest = document.createElement('h2');
-    h2Latest.textContent = "Latest Posts";
-    latestPostsSection.appendChild(h2Latest);
-
-    const articles = [
-        {
-            title: "Understanding AI in 2023",
-            content: "Explore the advancements in artificial intelligence and its impact on various industries."
-        },
-        {
-            title: "The Future of Quantum Computing",
-            content: "Dive into the world of quantum computing and its potential to revolutionize technology."
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Sample Web Page</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-    ];
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Random Page</h1>
+    <p>This is a sample web page demonstrating various HTML elements.</p>
 
-    articles.forEach(articleData => {
-        const article = document.createElement('article');
-        const h3 = document.createElement('h3');
-        h3.textContent = articleData.title;
-        const p = document.createElement('p');
-        p.textContent = articleData.content;
-        const a = document.createElement('a');
-        a.href = "#";
-        a.textContent = "Read more";
-        article.appendChild(h3);
-        article.appendChild(p);
-        article.appendChild(a);
-        latestPostsSection.appendChild(article);
-    });
+    <div>
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://www.example.com">Example Link</a></li>
+            <li><a href="mailto:you@example.com">Contact Us</a></li>
+        </ul>
+    </div>
 
-    main.appendChild(latestPostsSection);
+    <div>
+        <h2>Image</h2>
+        <img src="image.jpg" alt="A sample image">
+    </div>
 
-    // About section
-    const aboutSection = document.createElement('section');
-    aboutSection.id = "about";
-    const h2About = document.createElement('h2');
-    h2About.textContent = "About Us";
-    const pAbout = document.createElement('p');
-    pAbout.textContent = "We are passionate about technology and aim to provide insightful articles and resources.";
-    aboutSection.appendChild(h2About);
-    aboutSection.appendChild(pAbout);
-    main.appendChild(aboutSection);
+    <div>
+        <h2>Form</h2>
+        <form action="submit.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div>
+        <h2>Table</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>25</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h2>Div and Span</h2>
+        <div>
+            <span>This is a span inside a div.</span>
+        </div>
+    </div>
+</body>
+</html>
     
-    document.body.appendChild(main);
-
-    // Create footer
-    const footer = document.createElement('footer');
-    const h2Footer = document.createElement('h2');
-    h2Footer.textContent = "Contact Us";
-    const pEmail = document.createElement('p');
-    pEmail.textContent = "Email: info@customtechblog.com";
-    const pSocial = document.createElement('p');
-    pSocial.textContent = "Follow us on social media!";
-    footer.appendChild(h2Footer);
-    footer.appendChild(pEmail);
-    footer.appendChild(pSocial);
-    document.body.appendChild(footer);
-});
