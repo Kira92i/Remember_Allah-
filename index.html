@@ -77,6 +77,32 @@
         .download-btn:hover {
             background-color: #45a049;
         }
+        /* How to Install section styling */
+        .install-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .install-section h2 {
+            color: #FFBF00; /* Amber color */
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .install-images {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .install-image-container {
+            flex: 1;
+        }
+        .install-image-container img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9 / 16;
+            border-radius: 8px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -129,9 +155,29 @@
         <div class="download-section">
             <a href="https://github.com/Kira92i/Remember_Allah-/releases/download/v1.4.0/Remember.Allah.v1.4.0.apk" class="download-btn" download>Download APK</a>
         </div>
+
+        <!-- How to Install section -->
+        <div class="install-section">
+            <h2>How to Install the App</h2>
+            <div class="install-images">
+                <div class="install-image-container">
+                    <img src="https://raw.githubusercontent.com/Kira92i/Blogger/refs/heads/main/D1.png" alt="Install Step 1">
+                </div>
+                <div class="install-image-container">
+                    <img src="https://raw.githubusercontent.com/Kira92i/Blogger/refs/heads/main/D2.png" alt="Install Step 2">
+                </div>
+                <div class="install-image-container">
+                    <img src="https://raw.githubusercontent.com/Kira92i/Blogger/refs/heads/main/D3.png" alt="Install Step 3">
+                </div>
+                <div class="install-image-container">
+                    <img src="https://raw.githubusercontent.com/Kira92i/Blogger/refs/heads/main/D4.png" alt="Install Step 4">
+                </div>
+            </div>
+        </div>
+
     </div>
 
-     <blockquote data-package-name="com.apkpure.aegon" data-language="en" class="apkpure-app-card"></blockquote>
+    <blockquote data-package-name="com.apkpure.aegon" data-language="en" class="apkpure-app-card"></blockquote>
     <script async charset="utf-8" src="https://static.apkpure.com/www/static/script/plugins/appCard-1.0.0.min.js"></script>
 
 </body>
